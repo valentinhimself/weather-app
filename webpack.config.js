@@ -8,13 +8,30 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name][contenthash].js',
+    clean: true,
+    assetModuleFilename: '[name][ext]',
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /\.(png|svg|jpeg|jpg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
@@ -22,6 +39,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Webpack App',
       filename: 'index.html',
+      template: 'src/template.html',
     }),
   ],
 };
