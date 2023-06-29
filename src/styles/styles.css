@@ -12,6 +12,30 @@ body {
   background-size: cover;
   background-position: center bottom;
   height: 100vh;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+input,
+input:focus,
+input:focus-visible {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid white;
+  outline: none;
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 svg {
