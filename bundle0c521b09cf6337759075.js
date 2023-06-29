@@ -40,12 +40,36 @@ body {
   background-size: cover;
   background-position: center bottom;
   height: 100vh;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+input,
+input:focus,
+input:focus-visible {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid white;
+  outline: none;
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 svg {
   height: 50px;
   width: 50px;
-}`, "",{"version":3,"sources":["webpack://./src/styles/styles.css"],"names":[],"mappings":"AAAA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;AACF;;AAEA;EACE,yDAAA;EACA,4BAAA;EACA,sBAAA;EACA,kCAAA;EACA,aAAA;AACF;;AAEA;EACE,YAAA;EACA,WAAA;AACF","sourcesContent":["*,\n*::before,\n*::after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  background-image: url(../assets/background.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center bottom;\n  height: 100vh;\n}\n\nsvg {\n  height: 50px;\n  width: 50px;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/styles.css"],"names":[],"mappings":"AAAA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;AACF;;AAEA;EACE,yDAAA;EACA,4BAAA;EACA,sBAAA;EACA,kCAAA;EACA,aAAA;EACA,YAAA;AACF;;AAEA;EACE,aAAA;EACA,6BAAA;AACF;;AAEA;;;EAGE,uBAAA;EACA,YAAA;EACA,8BAAA;EACA,aAAA;EACA,YAAA;AACF;;AAEA;EACE,YAAA;AACF;;AAEA;EACE,kBAAA;AACF;;AAEA;EACE,YAAA;EACA,WAAA;AACF","sourcesContent":["*,\n*::before,\n*::after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  background-image: url(../assets/background.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center bottom;\n  height: 100vh;\n  color: white;\n}\n\n.container {\n  display: flex;\n  justify-content: space-around;\n}\n\ninput,\ninput:focus,\ninput:focus-visible {\n  background: transparent;\n  border: none;\n  border-bottom: 3px solid white;\n  outline: none;\n  color: white;\n}\n\ninput::placeholder {\n  color: white;\n}\n\ninput:focus::placeholder {\n  color: transparent;\n}\n\nsvg {\n  height: 50px;\n  width: 50px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -689,26 +713,6 @@ var apiKey = 'f10914a3d1df4c9e8bb192920231706';
 var location = 'London';
 var apiUrl = "https://api.weatherapi.com/v1/current.json?key=".concat(apiKey, "&q=").concat(location);
 
-// class WeatherApp {
-//   constructor() {
-//     this.apiKey = 'f10914a3d1df4c9e8bb192920231706';
-//     this.location = 'Denver';
-//     this.apiUrl = `https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${this.location}`;
-//   }
-
-//   async getWeatherData() {
-//     try {
-//       const response = await fetch(this.apiUrl, { mode: 'cors' });
-//       const data = await response.json();
-//       console.log(data);
-//       return data;
-//     } catch (err) {
-//       console.error(err);
-//       throw new Error('getData error');
-//     }
-//   }
-// }
-
 // закрепить все данные за переменными
 // указать все данные на странице
 // дать возможность менять город
@@ -737,4 +741,4 @@ var apiUrl = "https://api.weatherapi.com/v1/current.json?key=".concat(apiKey, "&
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleaf4846c3ce1be53ce224.js.map
+//# sourceMappingURL=bundle0c521b09cf6337759075.js.map
