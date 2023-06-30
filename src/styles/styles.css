@@ -38,7 +38,25 @@ input:focus::placeholder {
   color: transparent;
 }
 
-svg {
-  height: 50px;
+.data-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   width: 50px;
+}
+
+.icon-info > img {
+  height: 35px;
+  width: 35x;
+}
+
+.icon-info > .wind__img {
+  height: 28px;
+  width: 28x;
 }

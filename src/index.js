@@ -33,24 +33,37 @@ function populateDom(weatherData) {
   const date = document.querySelector('.date');
   const temp = document.querySelector('.temp');
   const tempToggle = document.querySelector('.temp-toggle');
-
+  const feelsLike = document.querySelector('.feels-like');
+  const humidity = document.querySelector('.humidity');
+  const rainChance = document.querySelector('.chance-of-rain');
+  const windSpeed = document.querySelector('.wind-speed');
   weatherType.textContent = weatherData.data.current.condition.text;
   town.textContent = weatherData.data.location.name;
   date.textContent = weatherData.data.location.localtime;
   temp.textContent = `${weatherData.data.current.temp_f} °F`;
+  feelsLike.textContent = `${weatherData.data.current.feelslike_f} °F`;
+  humidity.textContent = `${weatherData.data.current.humidity}%`;
+
+  rainChance.textContent = '';
+  windSpeed.textContent = `${weatherData.data.current.gust_mph} MPH`;
+
   tempToggle.textContent = `Display °C`;
 
   tempToggle.addEventListener('click', () =>
-    toggleTempScale(tempToggle, temp, weatherData)
+    toggleTempScale(tempToggle, temp, feelsLike, windSpeed, weatherData)
   );
 }
 
-function toggleTempScale(tempToggle, temp, weatherData) {
+function toggleTempScale(tempToggle, temp, feelsLike, windSpeed, weatherData) {
   if (tempToggle.textContent === `Display °C`) {
     temp.textContent = `${weatherData.data.current.temp_c} °C`;
+    feelsLike.textContent = `${weatherData.data.current.feelslike_c} °C`;
+    windSpeed.textContent = `${weatherData.data.current.gust_kph} KPH`;
     tempToggle.textContent = `Display °F`;
   } else {
     temp.textContent = `${weatherData.data.current.temp_f} °F`;
+    feelsLike.textContent = `${weatherData.data.current.feelslike_f} °F`;
+    windSpeed.textContent = `${weatherData.data.current.gust_mph} MPH`;
     tempToggle.textContent = `Display °C`;
   }
 }
