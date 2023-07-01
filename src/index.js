@@ -12,7 +12,7 @@ import './styles/styles.css'; //
 // дать возможность смотреть дни и часы
 
 const apiKey = 'f10914a3d1df4c9e8bb192920231706';
-let locationName = 'Denver';
+let locationName = 'London';
 let apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${locationName}`;
 
 async function getWeatherData() {
@@ -35,7 +35,7 @@ function populateDom(weatherData) {
   const tempToggle = document.querySelector('.temp-toggle');
   const feelsLike = document.querySelector('.feels-like');
   const humidity = document.querySelector('.humidity');
-  const rainChance = document.querySelector('.chance-of-rain');
+  //   const rainChance = document.querySelector('.chance-of-rain');
   const windSpeed = document.querySelector('.wind-speed');
   weatherType.textContent = weatherData.data.current.condition.text;
   town.textContent = weatherData.data.location.name;
@@ -44,7 +44,7 @@ function populateDom(weatherData) {
   feelsLike.textContent = `${weatherData.data.current.feelslike_f} °F`;
   humidity.textContent = `${weatherData.data.current.humidity}%`;
 
-  rainChance.textContent = '';
+  //   rainChance.textContent = '';
   windSpeed.textContent = `${weatherData.data.current.gust_mph} MPH`;
 
   tempToggle.textContent = `Display °C`;
@@ -52,6 +52,7 @@ function populateDom(weatherData) {
   tempToggle.addEventListener('click', () =>
     toggleTempScale(tempToggle, temp, feelsLike, windSpeed, weatherData)
   );
+  return { tempToggle };
 }
 
 function toggleTempScale(tempToggle, temp, feelsLike, windSpeed, weatherData) {
@@ -72,6 +73,10 @@ async function changeTown(searchField) {
   locationName = searchField.value;
   apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${locationName}`;
   const weatherData = await getWeatherData();
+  populateDom(weatherData).tempToggle.removeEventListener(
+    'click',
+    toggleTempScale
+  );
   populateDom(weatherData);
 }
 

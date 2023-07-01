@@ -17,9 +17,35 @@ body {
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  height: 50vh;
+  padding: 5vw;
 }
 
+.right,
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.town {
+  margin-top: 0.25rem;
+}
+.weather-type {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.temp {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+.date {
+  margin: 0.25rem 0;
+}
+.temp-toggle {
+  font-size: 0.875rem;
+}
 input,
 input:focus,
 input:focus-visible {
@@ -59,4 +85,8 @@ input:focus::placeholder {
 .icon-info > .wind__img {
   height: 28px;
   width: 28x;
+}
+
+.temp-toggle {
+  cursor: pointer;
 }
