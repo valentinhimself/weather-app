@@ -10,16 +10,20 @@ body {
   background-image: url(../assets/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center bottom;
+  background-position: center center;
   height: 100vh;
   color: white;
+  display: grid;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
-  height: 50vh;
+  justify-content: space-around;
+  height: 60vh;
   padding: 5vw;
+  gap: 5rem;
+  margin: auto auto;
+  position: relative;
 }
 
 .right,
@@ -29,6 +33,14 @@ body {
   justify-content: space-between;
 }
 
+.right {
+  height: 35vh;
+  align-self: center;
+}
+
+.left {
+  min-width: 300px;
+}
 .town {
   margin-top: 0.25rem;
 }
@@ -46,14 +58,22 @@ body {
 .temp-toggle {
   font-size: 0.875rem;
 }
+
+.search-container {
+  display: flex;
+  border-bottom: 3px solid white;
+  max-width: 175px;
+}
 input,
 input:focus,
 input:focus-visible {
   background: transparent;
   border: none;
-  border-bottom: 3px solid white;
   outline: none;
   color: white;
+  line-height: 25px;
+  width: 85%;
+  text-align: center;
 }
 
 input::placeholder {
@@ -81,6 +101,9 @@ input:focus::placeholder {
   height: 35px;
   width: 35x;
 }
+.search-icon {
+  width: 20px;
+}
 
 .icon-info > .wind__img {
   height: 28px;
@@ -89,4 +112,9 @@ input:focus::placeholder {
 
 .temp-toggle {
   cursor: pointer;
+}
+
+.weather-icon {
+  width: 125px;
+  padding: 1rem 0;
 }

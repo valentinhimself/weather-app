@@ -48,6 +48,10 @@ module.exports = {
           from: 'src/assets/svg', // Source directory of SVG files
           to: 'assets/svg', // Destination directory in the output `dist` folder
         },
+        {
+          from: 'src/assets/', // Source directory of SVG files
+          to: 'assets/', // Destination directory in the output `dist` folder
+        },
       ],
     }),
   ],
